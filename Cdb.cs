@@ -75,7 +75,10 @@ namespace CustomerD
             return dt;
         }
 
-
+        /// <summary>
+        /// usuwa z bazy danych wiersz
+        /// </summary>
+        /// <param name="index">indeks wiersza</param>
         public void usunWiersz(string index)
         {
             string q;
@@ -88,6 +91,13 @@ namespace CustomerD
 
         }
 
+        /// <summary>
+        /// Dodaje wiersz do bazy danych
+        /// </summary>
+        /// <param name="name">wartość w kolumnie name</param>
+        /// <param name="sname">wartość w kolumnie  surname</param>
+        /// <param name="tn">wartość w kolumnie  teephonenumber</param>
+        /// <param name="a">wartość w kolumnie caddress</param>
         public void dodajWiersz(string name, string sname, string tn, string a)
         {
             string q;
@@ -102,6 +112,12 @@ namespace CustomerD
             com.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Aktualizuje w bazie danych zmienione przez użytkownica komórki
+        /// </summary>
+        /// <param name="colname">nazwa kolumny, w której ma być zmieniona wartość</param>
+        /// <param name="newValue">nowa wartość</param>
+        /// <param name="id">id zmienianego wpisu</param>
         public void updateData(string colname, string newValue, string id)
         {
             string q;
@@ -112,6 +128,9 @@ namespace CustomerD
             com.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// zamyka połączenie z bazą
+        /// </summary>
         public void closeConnection()
         {
             polaczenie.Close();

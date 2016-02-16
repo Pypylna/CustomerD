@@ -19,7 +19,8 @@ namespace CustomerD
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton1.Checked)
+
+            if (radioButton1.Checked)
             {
                 nazwaUz.Enabled = true;
                 haslo.Enabled = true;
@@ -29,24 +30,41 @@ namespace CustomerD
                 nazwaUz.Enabled = false;
                 haslo.Enabled = false;
             }
+
+            
         }
 
         private void connectButton_Click(object sender, EventArgs e)
         {
-            Cdb baza;
-            if(radioButton1.Checked)
+            try
             {
-                baza = new Cdb(nazwaUz.Text, haslo.Text, nazwaSerwera.Text, nazwaBazy.Text, tableName.Text);
+                Cdb baza;
+
+                //sposob logowania zalezny od wyboru uzytkownika
+                if (radioButton1.Checked)
+                {
+                    baza = new Cdb(nazwaUz.Text, haslo.Text, nazwaSerwera.Text, nazwaBazy.Text, tableName.Text);
+                }
+                else
+                {
+                    baza = new Cdb(nazwaSerwera.Text, nazwaBazy.Text, tableName.Text);
+                }
+
+                //nowy widok po zalogowaniu
+                Form1 form1 = new Form1();
+                form1.baza = baza;
+                this.Hide();
+                form1.Show();
             }
-            else
+            catch(Exception ex)
             {
-                baza = new Cdb(nazwaSerwera.Text, nazwaBazy.Text, tableName.Text);
+                MessageBox.Show(ex.Message);
             }
 
-            Form1 form1 = new Form1();
-            form1.baza = baza;
-            this.Hide();
-            form1.Show();
+
+
+
+            
         }
     }
 }
