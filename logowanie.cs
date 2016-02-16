@@ -36,11 +36,11 @@ namespace CustomerD
             Cdb baza;
             if(radioButton1.Checked)
             {
-                baza = new Cdb(nazwaUz.Text, haslo.Text, nazwaSerwera.Text, nazwaBazy.Text);
+                baza = new Cdb(nazwaUz.Text, haslo.Text, nazwaSerwera.Text, nazwaBazy.Text, tableName.Text);
             }
             else
             {
-                baza = new Cdb(nazwaSerwera.Text, nazwaBazy.Text);
+                baza = new Cdb(nazwaSerwera.Text, nazwaBazy.Text, tableName.Text);
             }
 
             Form1 form1 = new Form1();

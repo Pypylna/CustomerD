@@ -40,6 +40,8 @@
             this.connectButton = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tableName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,14 +71,14 @@
             // nazwaUz
             // 
             this.nazwaUz.Enabled = false;
-            this.nazwaUz.Location = new System.Drawing.Point(144, 156);
+            this.nazwaUz.Location = new System.Drawing.Point(144, 165);
             this.nazwaUz.Name = "nazwaUz";
             this.nazwaUz.Size = new System.Drawing.Size(100, 20);
             this.nazwaUz.TabIndex = 5;
             // 
             // nazwaBazy
             // 
-            this.nazwaBazy.Location = new System.Drawing.Point(144, 117);
+            this.nazwaBazy.Location = new System.Drawing.Point(144, 108);
             this.nazwaBazy.Name = "nazwaBazy";
             this.nazwaBazy.Size = new System.Drawing.Size(100, 20);
             this.nazwaBazy.TabIndex = 6;
@@ -93,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 120);
+            this.label3.Location = new System.Drawing.Point(46, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 8;
@@ -102,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 156);
+            this.label4.Location = new System.Drawing.Point(46, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 9;
@@ -151,11 +153,29 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 141);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Nazwa tabeli";
+            // 
+            // tableName
+            // 
+            this.tableName.Location = new System.Drawing.Point(146, 138);
+            this.tableName.Name = "tableName";
+            this.tableName.Size = new System.Drawing.Size(98, 20);
+            this.tableName.TabIndex = 13;
+            // 
             // logowanie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.tableName);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.connectButton);
@@ -189,5 +209,7 @@
         private System.Windows.Forms.Button connectButton;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox tableName;
+        private System.Windows.Forms.Label label6;
     }
 }

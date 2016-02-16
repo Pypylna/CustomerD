@@ -13,7 +13,8 @@ namespace CustomerD
     public class Cdb
     {
         private SqlConnection polaczenie;
-        public string nazwaBazy;
+        private string tableName;
+        private string nazwaBazy;
             
 
         /// <summary>
@@ -23,17 +24,18 @@ namespace CustomerD
         /// <param name="pass">haslo</param>
         /// <param name="instance">instancja</param>
         /// <param name="dbdir">nazwa bazy</param>
-        public Cdb(string user, string pass, string instance, string dbdir)
+        public Cdb(string user, string pass, string instance, string dbdir, string tn)
         {
             polaczenie = new SqlConnection();
             polaczenie.ConnectionString = "user id=" + user +
                 ";password=" + pass + ";Data Source=" + instance +
                 ";Trusted_Connection=no" +
                 ";database=" + dbdir +
-                ";connection timeout=3";
+                ";connection timeout=5";
             polaczenie.Open();
 
             nazwaBazy = dbdir;
+            tableName = tn;
         }
 
         /// <summary>
@@ -41,7 +43,7 @@ namespace CustomerD
         /// </summary>
         /// <param name="instance">nazwa instancji</param>
         /// <param name="dbdir">nazwa bazy</param>
-        public Cdb(string instance, string dbdir)
+        public Cdb(string instance, string dbdir,string tn)
         {
             polaczenie = new SqlConnection();
             polaczenie.ConnectionString = "Data Source=" + instance +
@@ -51,14 +53,16 @@ namespace CustomerD
             polaczenie.Open();
 
             nazwaBazy = dbdir;
+            tableName = tn;
         }
 
         /// <summary>
         /// pobiera dane do obiektu DataTable
         /// </summary>
         /// <param name="q">zapytanie sql</param>
-        public DataTable pobierzDane(string q)
+        public DataTable pobierzDane()
         {
+            string q = "select * from " + tableName;
             DataTable dt = new DataTable();
             SqlDataReader dr;
             SqlCommand com;
@@ -75,7 +79,7 @@ namespace CustomerD
         public void usunWiersz(string index)
         {
             string q;
-            q = "DELETE FROM " + nazwaBazy + " WHERE id=" + index;
+            q = "DELETE FROM " + tableName + " WHERE id=" + index;
 
 
             SqlCommand com = new SqlCommand(q);
@@ -87,7 +91,7 @@ namespace CustomerD
         public void dodajWiersz(string name, string sname, string tn, string a)
         {
             string q;
-            q = "INSERT INTO " + nazwaBazy + " (name,surname,telephonenumber,caddress) VALUES ('" +
+            q = "INSERT INTO " + tableName + " (name,surname,telephonenumber,caddress) VALUES ('" +
                     name + "','" +
                     sname + "','" +
                     tn + "','" +
@@ -101,7 +105,7 @@ namespace CustomerD
         public void updateData(string colname, string newValue, string id)
         {
             string q;
-            q = "UPDATE customers set " + colname + " = '" + newValue + "' WHERE id =" +id;
+            q = "UPDATE " + tableName + " set " + colname + " = '" + newValue + "' WHERE id =" +id;
 
             SqlCommand com = new SqlCommand(q);
             com.Connection = polaczenie;

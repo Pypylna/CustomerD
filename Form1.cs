@@ -22,7 +22,7 @@ namespace CustomerD
         private void getter_Click(object sender, EventArgs e)
         {
             
-            widokDanych.DataSource = baza.pobierzDane("select * from " + baza.nazwaBazy);
+            widokDanych.DataSource = baza.pobierzDane();
         }
 
 
