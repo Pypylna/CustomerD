@@ -1,0 +1,10 @@
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\bin\Debug\CustomerD.exe.config
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\bin\Debug\CustomerD.exe
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\bin\Debug\CustomerD.pdb
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\obj\Debug\CustomerD.Form1.resources
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\obj\Debug\CustomerD.Properties.Resources.resources
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\obj\Debug\CustomerD.csproj.GenerateResource.Cache
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\obj\Debug\CustomerD.exe
+c:\users\linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\obj\Debug\CustomerD.pdb
+C:\Users\Linka\Documents\Visual Studio 2015\Projects\CustomerD\CustomerD\obj\Debug\CustomerD.logowanie.resources
+C:\Users\Linka\documents\visual studio 2015\Projects\CustomerD\CustomerD\obj\Debug\CustomerD.csprojResolveAssemblyReference.cache
